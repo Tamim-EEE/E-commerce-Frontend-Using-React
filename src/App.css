@@ -1,38 +1,643 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css");
+
+body {
+  font-family: "Dosis", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-blue {
+  background-color: #233a95;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headerWraper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.headerWraper .top-strip {
+  padding: 8px 0px;
+  font-family: "inter", sans-serif;
+}
+.headerWraper .top-strip p {
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.headerWraper .header {
+  width: 100%;
+  height: auto;
+  padding: 25px 0px;
+}
+
+.headerWraper .header .container {
+  font-family: "Inter", sans-serif;
+}
+
+.header img {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.headerWraper .header .part-2 .countryDropdown {
+  width: 190px;
+  height: 60px;
+  min-width: 190px;
+  color: black !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  border-radius: 7px;
+  font-family: "Inter", sans-serif;
+}
+.headerWraper .header .part-2 .countryDropdown {
+  text-align: left;
+  justify-content: flex-start;
+  padding: 15px 15px !important;
+}
+
+.headerWraper .header .part-2 .countryDropdown .location {
+  font-size: 12px !important;
+  text-transform: capitalize !important;
+  color: rgb(153, 153, 153) !important;
+  line-height: 20px;
+}
+.headerWraper .header .part-2 .countryDropdown .name {
+  font-size: 14px !important;
+  text-transform: capitalize !important;
+  color: #233a95 !important;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.headerWraper .header .part-2 .countryDropdown .ms-auto {
+  opacity: 0.6;
+}
+.location-model .MuiPaper-root {
+  padding: 30px;
+  border-radius: 10px;
+  font-family: "inter", sans-serif;
+  position: relative;
+}
+
+.location-model .close-button {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  border-radius: 50%;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+  color: black;
+}
+
+.location-model .close-button svg {
+  font-size: 22px;
+}
+
+.location-model .area-location {
+  margin-bottom: 0;
+  padding: 2px;
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.location-model .area-location li {
+  list-style: none;
+  width: 100%;
+}
+.location-model .area-location li button {
+  width: 100%;
+  text-transform: capitalize;
+  color: black;
+  justify-content: flex-start;
+  padding: 15px 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.location-model .area-location li button:hover {
+  background: #e6e6e6;
+}
+
+.location-model .area-location li button.active {
+  background: #84ebff;
+}
+
+.search {
+  width: 60%;
+  height: 60px;
+  background-color: #f3f4f7;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+}
+.search input {
+  background: transparent !important;
+  outline: none !important;
+  border: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 40px;
+  padding: 0px 20px;
+  font-size: 15px;
+}
+
+.search input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+}
+
+.search button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 100;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #535367;
+}
+
+.search button svg {
+  font-size: 40px;
+}
+
+header .part-3 .circle {
+  min-width: 45px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+header .part-3 .circle svg {
+  font-size: 25px;
+}
+
+header .part-3 .bag {
+  min-width: 45px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: #ffcdc357;
+  color: #eb2b0f;
+  position: relative;
+}
+
+header .part-3 .bag svg {
+  font-size: 25px;
+  color: #eb2b0f;
+}
+
+header .part-3 .price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+header .part-3 .count {
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  font-size: 12px;
+  color: white;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #ff2200;
+}
+
+nav .allCatTab {
+  display: block;
+  background: #2bbefc;
+  padding: 8px 20px !important;
+  border-radius: 40px;
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+}
+
+nav .allCatTab * {
+  color: white !important;
+}
+
+nav .allCatTab .text {
+  font-weight: 600;
+}
+
+nav .allCatTab .icon-1 {
+  font-size: 20px;
+}
+nav .allCatTab .icon-2 {
+  font-size: 20px;
+}
+
+nav .navPart-2 ul {
+  margin-bottom: 0px;
+}
+
+nav .navPart-2 ul li a {
+  text-decoration: none;
+}
+
+nav .navPart-2 ul li a button {
+  display: block;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 8px 8px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 30px;
+  font-family: "Dosis", sans-serif;
+}
+
+nav .navPart-2 ul li a button svg {
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+
+nav .navPart-2 ul li a button:hover {
+  color: #2bbefc;
+  background: #f0faff;
+}
+
+nav .navPart-1 {
+  max-width: 20%;
+  padding: 0;
+}
+nav .navPart-2 {
+  max-width: 80%;
+  padding: 0;
+}
+
+nav .navPart-2 ul li {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+nav .navPart-2 ul li .submenu {
+  position: absolute;
+  top: 80%;
+  left: 0px;
+  min-width: 200px;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+nav .navPart-2 ul li:hover .submenu {
+  opacity: 1;
+  visibility: inherit;
+  top: 100%;
+}
+
+nav .navPart-2 ul li .submenu a {
+  width: 100%;
+}
+
+nav .navPart-2 ul li .submenu a button {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start !important;
+  border-radius: 0px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.navPart-1 .catWrapper {
+  position: relative;
+}
+
+.navPart-1 .catWrapper .sideNavBar {
+  width: 100%;
+  max-height: 0;
+  background: white;
+  position: absolute;
+  top: 127%;
+  left: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0s 0.4s; /* Delay visibility */
+  z-index: 100;
+}
+
+.navPart-1 .catWrapper .sideNavBar.open {
+  opacity: 1;
+  visibility: visible; /* Show the element before opacity fully transitions */
+  max-height: 500px; /* Set a max-height that fits the content */
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul {
+  padding: 0;
+}
+.navPart-1 .catWrapper .sideNavBar ul li {
+  list-style: none;
+  width: 100%;
+  padding: 5px 0px;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li button {
+  width: 100%;
+  color: black;
+  justify-content: flex-start;
+  text-transform: capitalize;
+  font-family: "inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li {
+  position: static;
+}
+
+nav .navPart-1 .catWrapper .sideNavBar ul li button svg {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li .sidemenu {
+  position: absolute;
+  padding: 15px;
+  width: 250px;
+  height: 100%;
+  top: 0px;
+  left: 90%;
+  background: white;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li:hover .sidemenu {
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li button svg {
+  font-size: 18px;
+}
+
+.navPart-1 .catWrapper .sideNavBar ul li button:hover {
+  color: #2bbefc;
+  background: transparent;
+}
+
+.homeBannerSection {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  margin: 0 auto; /* Center the slider */
+  overflow: hidden;
+}
+
+.homeBannerSection .item img {
+  width: 100%; /* Set full width for responsive layout */
+  height: 800px; /* Set a fixed height to ensure consistency */
+  object-fit: cover; /* Ensures the image covers the area and maintains aspect ratio */
+  display: block; /* Ensures block display */
+}
+
+.homeBannerSection * {
+  outline: none;
+}
+
+.homeBannerSection .slick-dots {
+  bottom: 50px;
+  position: absolute;
+}
+
+.slick-dots li button::before {
+  font-size: 15px;
+  color: white;
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button::before {
+  color: black;
+  opacity: 0.75;
+}
+
+.slick-dots li button:hover::before {
+  color: black;
+  opacity: 0.75;
+}
+
+.homeBannerSection .slick-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: transparent;
+  border-radius: 100%;
+}
+
+.homeBannerSection .slick-arrow.slick-next {
+  right: 65px !important;
+}
+.homeBannerSection .slick-arrow.slick-prev {
+  left: 25px !important;
+}
+
+.homeBannerSection .slick-arrow.slick-next::before {
+  font-size: 60px;
+}
+.homeBannerSection .slick-arrow.slick-prev::before {
+  font-size: 60px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.homeProducts {
+  padding: 25px 0px;
+  width: 100%;
+}
+
+.homeProducts .banner {
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.homeProducts h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.homeProducts .para {
+  font-weight: 400;
+}
+
+.homeProducts .view-button {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 12px;
+  opacity: 0.6;
+  font-family: "Inter", sans-serif;
+  padding: 5px 15px;
+}
+
+.homeProducts .view-button svg {
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.homeProducts .productItem {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+.homeProducts .info {
+  padding: 20px;
+}
+
+.homeProducts .info h4 {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.homeProducts .info .price .oldPrice {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  font-weight: 600;
+}
+.homeProducts .info .price .netPrice {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-row .productItem {
+  border-right: 1px solid transparent !important;
+}
+
+.product-row .swiper-slide:last-child .productItem {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.swiper {
+  padding-right: 1px !important;
+}
+
+.productItem .badge {
+  display: inline-block;
+  padding: 7px 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+.productItem .text-bg-primary {
+  background: #2bbef9 !important;
+}
+
+.productItem .action {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 20px;
+  right: -20px;
+  gap: 10px;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .imgWrapper {
+  overflow: hidden;
+}
+.productItem .imgWrapper img{
+  transition: all 0.2s ease-in-out;
+}
+
+.productItem .imgWrapper:hover img{
+  transform: scale(1.1);
+}
+.productItem .imgWrapper:hover .action {
+  right: 10px !important;
+  opacity: 1 !important;
+}
+
+
+
+/* Apply delay only to the second button */
+.productItem .action button:nth-child(2) {
+  opacity: 0;
+  right: -10px;
+  transition: right 0.2s ease-in-out 0.2s; /* Delay of 0.2s */
+}
+
+.productItem .imgWrapper:hover .action button:nth-child(2) {
+  opacity: 1;
+  right: 0px;
+}
+
+
+
+.productItem .action button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: white;
+}
+
+.productItem .action button svg {
+  pointer-events: none;
+  font-size: 15px;
+}
+
+.productItem .action button:hover {
+  background: #233a95;
+}
+
+.productItem .action button:hover svg {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
